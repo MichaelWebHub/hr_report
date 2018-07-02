@@ -1,0 +1,26 @@
+<div class="hr-menu">
+    <div class="hr-menu-inner">
+        <div class="menu-container">
+            <div class="menu-left-slide"></div>
+            <div class="menu-elements">
+                <div class="menu-toggle" ng-click="$ctrl.toggleMenu()">
+                    <div id="nav-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div id="{{$index + 1}}" class="menu-element"  ng-repeat="element in $ctrl.menu" ng-click="$ctrl.toggleDropdown($event, $index, element)"></div>
+            </div>
+        </div>
+        <div class="menu-dropdown hide">
+            <div class="menu-dropdown-inner hide">
+                <h2 class="dropdown-heading"></h2>
+                <div class="menu-dropdown-list">
+                    <div id="{{element.gvMenuSelectedItem}}" class="menu-dropdown-element" ng-repeat="element in $ctrl.activeElements" ng-click="$ctrl.initPage(element.gvMenuSelectedItem)"> {{element.label}} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
